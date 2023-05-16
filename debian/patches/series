@@ -2,3 +2,7 @@
 02-debian-backspace.diff
 02-debian-drop-rin-from-screen-256color.diff
 03-debian-ncursesconfig-omit-L.diff
+CVE-2021-39537.patch
+CVE-2022-29458.patch
+CVE-2023-29491-mitigation.patch
+fix-off-by-one-loop-convert-strings.patch

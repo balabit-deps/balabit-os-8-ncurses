@@ -1,3 +1,26 @@
+ncurses (6.2-0ubuntu2.1) focal-security; urgency=medium
+
+  * SECURITY UPDATE: heap buffer overflow in the _nc_captoinfo function
+    - debian/patches/CVE-2021-39537.patch: add a check for end-of-string in
+      cvtchar to handle a malformed string in infotocap.
+    - CVE-2021-39537
+  * SECURITY UPDATE: out-of-bounds read in the convert_strings function
+    - debian/patches/CVE-2022-29458.patch:add a limit-check to guard against
+      corrupt terminfo data.
+    - CVE-2022-29458
+  * SECURITY UPDATE: memory corruption when processing malformed terminfo data
+    entries loaded by setuid/setgid programs
+    - debian/patches/CVE-2023-29491-mitigation.patch: change the
+      --disable-root-environ configure option behavior.
+    - debian/rules: set --disable-root-environ in configuration options.
+    - debian/libtinfo5.symbols, debian/libtinfo6.symbols: add _nc_env_access
+      to symbols files.
+    - CVE-2023-29491
+  * debian/patches/fix-off-by-one-loop-convert-strings.patch: correct an
+    off-by-one loop-limit in convert_strings function.
+
+ -- Camila Camargo de Matos <camila.camargodematos@canonical.com>  Tue, 16 May 2023 15:47:48 -0300
+
 ncurses (6.2-0ubuntu2) focal; urgency=medium
 
   * New upstream version.
